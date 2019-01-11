@@ -16,6 +16,8 @@ final class MessageTest extends TestCase
         $message->originator = "TestOriginator";
         $message->messageBody = "Loremipsumdolorsitamet";
 
-        $this->assertEquals('Recipient: Test9054545 , Originator: TestOriginator , Message: Loremipsumdolorsitamet', $message->send());
+        $messageJson = '{"recipient":"Test9054545","originator":"TestOriginator","message":"Loremipsumdolorsitamet"}';
+
+        $this->assertEquals($messageJson, $message->send());
     }
 }

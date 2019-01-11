@@ -11,6 +11,12 @@ class Message
 
     public function send(): string
     {
-        return "Recipient: " . $this->recipient . " , Originator: " . $this->originator . " , Message: " . $this->messageBody;
+        $messageArr = [
+            'recipient' => $this->recipient,
+            'originator' => $this->originator,
+            'message' => $this->messageBody
+        ];
+
+        return json_encode($messageArr);
     }
 }
