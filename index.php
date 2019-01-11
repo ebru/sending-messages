@@ -7,8 +7,8 @@ use App\Message;
 
 $message = new Message();
 
-$message->recipient = "Test9054545";
-$message->originator = "TestOriginator";
-$message->messageBody = "Loremipsumdolorsitamet";
+$message->recipients  = ['31612345678'];
+$message->originator  = 'MessageBird';
+$message->body        = 'This is a test message.';
 
 echo $message->send();
