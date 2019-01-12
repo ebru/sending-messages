@@ -4,8 +4,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Controller\AuthController as Auth;
 use Controller\CreateController;
 
+// Authenticate the request
 authenticate();
 
+// Handle sending request to MessageBird API
 function request() {
 	// Get request type
 	$requestMethod = $_SERVER["REQUEST_METHOD"];

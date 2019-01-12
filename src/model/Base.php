@@ -14,6 +14,7 @@ class Base
     const RESPONSE_STATUS_GENERAL = 500;
 
     public function __construct() {
+        // Connect to MessageBird
         $this->client = new \MessageBird\Client(self::CLIENT_API_KEY);
     }
 }
