@@ -20,9 +20,9 @@ class CreateController extends BaseController
         }
 
         // Set up the message
-        $message->recipients  = $data['recipient'];
-        $message->originator  = $data['originator'];
-        $message->body        = $data['message'];
+        $message->recipients = $data['recipient'];
+        $message->originator = $data['originator'];
+        $message->body       = $data['message'];
 
         return $message->send();
     }
