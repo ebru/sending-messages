@@ -10,6 +10,11 @@ class Message
     public $originator;
     public $body;
 
+    const RESPONSE_STATUS_SUCCESS = 200;
+    const RESPONSE_STATUS_BAD_REQUEST = 400;
+    const RESPONSE_STATUS_UNAUTHORIZED = 401;
+    const RESPONSE_STATUS_GENERAL = 500;
+
     public function __construct() {
         $this->client = new \MessageBird\Client('lG7WMSfYQkXM9LImklLsK107L');
     }
@@ -26,25 +31,25 @@ class Message
             $messageResult = $this->client->messages->create($message);
             
             $response = [
-				'status' => 201,
+				'status' => self::RESPONSE_STATUS_SUCCESS,
 				'status_message' =>'Message is sent.'
             ];
 
         } catch (\MessageBird\Exceptions\AuthenticateException $e) {
             $response = [
-				'status' => 400,
-				'status_message' =>'Authorization key is not valid.',
+				'status' => self::RESPONSE_STATUS_UNAUTHORIZED,
+				'status_message' =>'Authorization key for MessageBird is not valid.',
             ];
 
         } catch (\MessageBird\Exceptions\BalanceException $e) {
             $response = [
-				'status' => 400,
-				'status_message' =>'Out of balance.'
+				'status' => self::RESPONSE_STATUS_BAD_REQUEST,
+				'status_message' =>'Out of balance on MessageBird.'
             ];
 
         } catch (\Exception $e) {
             $response = [
-				'status' => 500,
+				'status' => self::RESPONSE_STATUS_GENERAL,
 				'status_message' => $e->getMessage()
             ];
         }
