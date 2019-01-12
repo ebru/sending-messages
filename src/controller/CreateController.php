@@ -42,10 +42,17 @@ class CreateController extends BaseController
             ];
         }
 
+        if (empty($data['message'])) {
+            return [
+				'status' => self::RESPONSE_STATUS_BAD_REQUEST,
+				'status_message' =>'Message field cannot be empty.'
+            ];
+        }
+
         if (strlen($data['message']) > 160) {
             return [
 				'status' => self::RESPONSE_STATUS_BAD_REQUEST,
-				'status_message' =>'Message text cannot be longer than 160.'
+				'status_message' =>'Message text cannot be longer than 160 characters.'
             ];
         }
     }

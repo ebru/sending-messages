@@ -1,17 +1,16 @@
 <?php
 
-declare(strict_types = 1);
+// declare(strict_types = 1);
 
-use PHPUnit\Framework\TestCase;
+// use PHPUnit\Framework\TestCase;
+// use Controller\AuthController;
 
-use Controller\AuthController;
+// final class AuthControllerTest extends TestCase
+// {
+//     public function testSuccessful(): void
+//     {
+//         $authController = new AuthController();
 
-final class AuthControllerTest extends TestCase
-{
-    public function testSuccessful(): void
-    {
-        $authController = new AuthController();
-
-        $this->assertTrue(true);
-    }
-}
+//         $this->assertTrue(true);
+//     }
+// }
