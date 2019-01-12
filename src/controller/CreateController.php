@@ -12,6 +12,14 @@ class CreateController extends BaseController
         // Create new message
         $message = new Message();
 
+        // Validate the request data
+        $validationResponse = $this->validateRequest($data);
+
+        if (!empty($validationResponse)) {
+            return $validationResponse;
+        }
+
+        // Set up the message
         $message->recipients  = $data['recipient'];
         $message->originator  = $data['originator'];
         $message->body        = $data['message'];
@@ -19,7 +27,26 @@ class CreateController extends BaseController
         return $message->send();
     }
 
-    public function validate($input) {
+    public function validateRequest(array $data) {
+        if (empty($data['recipient'])) {
+            return [
+				'status' => self::RESPONSE_STATUS_BAD_REQUEST,
+				'status_message' =>'Recipient field cannot be empty.'
+            ];
+        }
 
+        if (empty($data['originator'])) {
+            return [
+				'status' => self::RESPONSE_STATUS_BAD_REQUEST,
+				'status_message' =>'Originator field cannot be empty.'
+            ];
+        }
+
+        if (strlen($data['message']) > 160) {
+            return [
+				'status' => self::RESPONSE_STATUS_BAD_REQUEST,
+				'status_message' =>'Message text cannot be longer than 160.'
+            ];
+        }
     }
 }
