@@ -1,5 +1,4 @@
 <?php
-header('Content-type: application/json');
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Controller\AuthController as Auth;
@@ -11,7 +10,7 @@ authenticate();
 // Handle sending request to MessageBird API
 function request() {
 	// Get request type
-	$requestMethod = $_SERVER["REQUEST_METHOD"];
+	$requestMethod = $_SERVER['REQUEST_METHOD'];
 
 	/* Request type check
 	Other request types can be added to switch statement later on */
@@ -27,7 +26,7 @@ function request() {
 
 		default:
 			// Invalid request method
-			header("HTTP/1.0 405 Method Not Allowed");
+			header('HTTP/1.0 405 Method Not Allowed');
 			break;
 	}
 }
@@ -48,6 +47,7 @@ function authenticate() {
 
 // Set up the header and print JSON formatted response
 function printResponse($response) {
-	header("HTTP/1.0 " . $response['status']);
+	header('Content-type: application/json');
+	header('HTTP/1.0 ' . $response['status']);
 	echo json_encode($response);
 }
