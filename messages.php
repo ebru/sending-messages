@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\Message;
+use Controller\CreateController;
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
@@ -13,15 +13,11 @@ switch($requestMethod)
 			// Get body of the POST request
 			$data = json_decode(file_get_contents('php://input'), true);
 
-			// Create new message
-			$message = new Message();
-
-			$message->recipients  = $data['recipient'];
-			$message->originator  = $data['originator'];
-			$message->body        = $data['message'];
-
+			$createController = new CreateController();
+			
 			header('Content-Type: application/json');
-			echo json_encode($message->send());
+			echo json_encode($createController->create($data));
+			
 			break;
 		default:
 			// Invalid request method
