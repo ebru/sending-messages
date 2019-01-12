@@ -17,7 +17,7 @@ final class MessageTest extends TestCase
         $message->body        = 'This is a test message.';
 
         $expected = [
-            'status' => 201,
+            'status' => 200,
             'status_message' => "Message is sent."
         ];
 
