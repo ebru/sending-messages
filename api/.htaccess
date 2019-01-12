@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^messages/?$ messages.php [NC,L]
