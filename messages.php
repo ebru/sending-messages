@@ -1,4 +1,5 @@
 <?php
+header('Content-type: application/json');
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Controller\AuthController as Auth;
@@ -21,8 +22,7 @@ function request() {
 
 			$createController = new CreateController();
 
-			header('Content-Type: application/json');
-			echo json_encode($createController->create($data));
+			printResponse($createController->create($data));
 			break;
 
 		default:
@@ -42,7 +42,12 @@ function authenticate() {
 	if ($authResponse['status'] == '200') {
 		request();
 	} else {
-		header('Content-Type: application/json');
-		echo json_encode($authResponse);
+		printResponse($authResponse);
 	}
+}
+
+// Set up the header and print JSON formatted response
+function printResponse($response) {
+	header("HTTP/1.0 " . $response['status']);
+	echo json_encode($response);
 }
