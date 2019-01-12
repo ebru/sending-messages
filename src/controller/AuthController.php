@@ -3,15 +3,12 @@ declare(strict_types = 1);
 
 namespace Controller;
 
-class AuthController
+class AuthController extends BaseController
 {
     private static $clientApiKeys = [
         'user1' => '9fRXBgUiMjF6tnTnIm3ThqjQZ9q6GwH5',
         'user2' => 'rKNOfXdItLhfbGhcDFgYTDNFKitMDFZa'
     ];
-
-    const RESPONSE_STATUS_SUCCESS = 200;
-    const RESPONSE_STATUS_UNAUTHORIZED = 401;
 
     public function authenticate($headers): array {
         if (!$headers['Authorization']) {

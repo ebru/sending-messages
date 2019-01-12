@@ -5,7 +5,7 @@ namespace Controller;
 
 use Model\Message;
 
-class CreateController 
+class CreateController extends BaseController
 {
     public function create($data): array
     {
@@ -17,5 +17,9 @@ class CreateController
         $message->body        = $data['message'];
 
         return $message->send();
+    }
+
+    public function validate($input) {
+
     }
 }

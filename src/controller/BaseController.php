@@ -1,0 +1,10 @@
+<?php
+declare(strict_types = 1);
+
+namespace Controller;
+
+class BaseController
+{
+    const RESPONSE_STATUS_SUCCESS = 200;
+    const RESPONSE_STATUS_UNAUTHORIZED = 401;
+}
