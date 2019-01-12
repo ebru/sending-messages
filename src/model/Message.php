@@ -22,7 +22,8 @@ class Message extends Base
             
             $response = [
 				'status' => self::RESPONSE_STATUS_SUCCESS,
-				'status_message' =>'Message is sent.'
+                'status_message' =>'Message is sent.',
+                'details' => $messageResult
             ];
 
         } catch (\MessageBird\Exceptions\AuthenticateException $e) {
