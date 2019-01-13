@@ -8,18 +8,16 @@ use Model\Date;
 class RateLimitController extends BaseController
 {
     public function check($lastRequest, $currentTime): array {
-        if (isset($lastRequest)) {
-            $last = strtotime($lastRequest);
-            $current = strtotime($currentTime);
-            
-            $diff = abs($last - $current);
+        $last = strtotime($lastRequest);
+        $current = strtotime($currentTime);
 
-            if ($diff <= 1) {
-                return [
-                    'status' => self::RESPONSE_STATUS_BAD_REQUEST,
-                    'status_message' =>'Request limit exceeded.'
-                ];
-            }
+        $diff = abs($last - $current);
+
+        if ($diff <= 1) {
+            return [
+                'status' => self::RESPONSE_STATUS_BAD_REQUEST,
+                'status_message' =>'Request limit exceeded.'
+            ];
         }
         
         return [
