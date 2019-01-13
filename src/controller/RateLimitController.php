@@ -8,10 +8,10 @@ class RateLimitController extends BaseController
     public function check($lastRequest): array {
         if (isset($lastRequest)) {
             $last = strtotime($lastRequest);
-            $curr = strtotime(date("Y-m-d h:i:s"));
-            $sec =  abs($last - $curr);
+            $current = strtotime(date("Y-m-d h:i:s"));
+            $time = abs($last - $current);
 
-            if ($sec <= 3) {
+            if ($time <= 1) {
                 return [
                     'status' => self::RESPONSE_STATUS_BAD_REQUEST,
                     'status_message' =>'Request limit exceeded.'
