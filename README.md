@@ -23,7 +23,7 @@ http://localhost/rest-api-app/apidocs/
 ![Scheme](assets/screenshot.png)
 
 ## Sending Requests
-* You can send requests using **Try it out** button on /apidocs page or send POST requests to the URL below using environments like **Postman.**
+You can send requests using **Try it out** button on /apidocs page or send POST requests to the URL below using environments like **Postman.**
 
 **Base URL:**
 http://localhost/rest-api-app
