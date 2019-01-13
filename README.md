@@ -63,5 +63,5 @@ OK (8 tests, 21 assertions)
 
 ## Improvements
 * Slim framework can be used for more efficient structuring.
-* API rate limit can be implemented while storing requests using in-memory storage like Redis.
+* API rate limit can be improved while storing requests using in-memory storage like Redis.
 * JWT would be applied for more secure authentication.
