@@ -30,16 +30,10 @@ http://localhost/rest-api-app
 
 **Reguest**
 
-| Method | URL         |
-| -------|------------ |
-| POST   | /messages
-
-**Headers**
-
-| Key           | Value               |
-| --------------|-------------------- |
-| Content-Type  | application/json
-| Authorization | apiKey
+| Method | URL       | Header Key    | Header Value     |
+| -------|-----------|---------------|----------------- |
+| POST   | /messages | Content-Type  | application/json |
+|        |           | Authorization | apiKey
 
 Authorization header with a valid apiKey must be sent for authenticated requests. You can find sample data below.
 
