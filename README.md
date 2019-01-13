@@ -39,7 +39,7 @@ Authorization header with a valid apiKey must be sent for authenticated requests
 
 **apiKey:** `rKNOfXdItLhfbGhcDFgYTDNFKitMDFZa`
 
-**Request Body**
+**Sample Body**
 
 ```
 {
