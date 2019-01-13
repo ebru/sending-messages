@@ -12,31 +12,25 @@ class AuthController extends BaseController
 
     public function authenticate($headers): array {
         if (!$headers['Authorization']) {
-            $response = [
+            return [
                 'status' => self::RESPONSE_STATUS_UNAUTHORIZED,
                 'status_message' =>'Authorization key is missing.'
             ];
-
-            return $response;
         }
 
         $apiKey = $headers['Authorization'];
 
         if (!$this->validate($apiKey)) {
-            $response = [
+            return [
                 'status' => self::RESPONSE_STATUS_UNAUTHORIZED,
                 'status_message' =>'Authorization key provided is not valid.'
             ];
-
-            return $response;
         }
 
-        $response = [
+        return [
             'status' => self::RESPONSE_STATUS_SUCCESS,
             'status_message' =>'Authorization is valid.'
         ];
-
-        return $response;
     }
     
     public function validate($apiKey) {

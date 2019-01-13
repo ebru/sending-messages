@@ -3,7 +3,11 @@
 require_once '../vendor/autoload.php';
 
 use Controller\AuthController as Auth;
+use Controller\RateLimitController;
 use Controller\CreateController;
+
+// Rate limit control
+applyRateLimit();
 
 // Authenticate the request
 authenticate();
@@ -32,6 +36,21 @@ function request() {
 	}
 }
 
+// Handle the limit of requests per second
+function applyRateLimit() {
+	session_start();
+
+	$rateLimitController = new RateLimitController();
+	$rateLimitResponse = $rateLimitController->check($_SESSION['LAST_REQUEST']);
+
+	if ($rateLimitResponse['status'] != '200') {
+		printResponse($rateLimitResponse); die();
+	}
+
+	$_SESSION['LAST_REQUEST'] = date("Y-m-d h:i:s");
+}
+
+// Check the apiKey in headers
 function authenticate() {
 	// Get request headers
 	$headers = getallheaders();
