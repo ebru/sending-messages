@@ -41,7 +41,8 @@ function applyRateLimit() {
 	session_start();
 
 	$rateLimitController = new RateLimitController();
-	$rateLimitResponse = $rateLimitController->check($_SESSION['LAST_REQUEST']);
+	// Pass last request and current time
+	$rateLimitResponse = $rateLimitController->check($_SESSION['LAST_REQUEST'], date("Y-m-d h:i:s"));
 
 	if ($rateLimitResponse['status'] != '200') {
 		printResponse($rateLimitResponse); die();
