@@ -1,2 +1,3 @@
 RewriteEngine On
 RewriteRule ^messages/?$ messages.php [NC,L]
+RewriteRule ^$ apidocs [NC,L]

@@ -7,6 +7,7 @@
     },
     "require-dev": {
         "messagebird/php-rest-api": "1.12.0-beta",
-        "phpunit/phpunit": "^7"
+        "phpunit/phpunit": "^7",
+        "swagger-api/swagger-ui": "3.20.4"
     }
 }

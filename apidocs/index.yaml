@@ -1,0 +1,84 @@
+swagger: '2.0'
+info:
+  description: This is a sample REST API application uses MessageBird API.
+  version: '1.0'
+  title: REST API App w/ MessageBird
+host: localhost
+basePath: /rest-api-app
+tags:
+- name: messages
+paths:
+  /messages:
+    post:
+      tags:
+      - messages
+      summary: Create a new message
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        description: apiKey
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: Message object that needs to be sent
+        required: true
+        schema:
+          properties:
+            recipient:
+              type: string
+            originator:
+              type: string
+            message:
+              type: string
+      responses:
+        200:
+          description: Success response.
+          examples:
+            '1':
+              status: 200
+              status_message: Message is sent.
+              details:
+                direction: mt
+                type: sms
+                originator: MessageBird
+                body: Test, test.
+                reference: null
+                validity: null
+                gateway: 10
+                typeDetails:
+                datacoding: plain
+                mclass: 1
+                scheduledDatetime: null
+                recipients:
+                  totalCount: 1
+                  totalSentCount: 1
+                  totalDeliveredCount: 0
+                  totalDeliveryFailedCount: 0
+                  items:
+                    recipient: 905456815192
+                    status: sent
+                    statusDatetime: '2019-01-13T08:21:24+00:00'
+                reportUrl: null        
+        400:
+          description: Client errors.
+          examples:
+            '1':
+              status: 400
+              status_message: Recipient field cannot be empty. 
+            '2':
+              status: 400
+              status_message: Message text cannot be longer than 160 characters.
+        401:
+          description: Not authorized.
+          examples:
+            '1':
+              status: 401
+              status_message: Authorization key is missing. 
+            '2':
+              status: 401
+              status_message: Authorization key provided is not valid.
