@@ -53,3 +53,8 @@ Authorization header with a valid apiKey must be sent for authenticated requests
 MessageBird client is set up with test key as default. It allows you to see the response without actually sending the message. If you would like to have the message to be delivered, please set the key on **src/model/Base.php** as below.
 
 `const CLIENT_API_KEY = '6zvxhpznYE2d1zeJ2O2JBRFGh';`
+
+## Improvements
+* Slim framework can be used for more efficient structuring.
+* API rate limit can be implemented while storing requests using in-memory storage like Redis.
+* JWT would be applied for more secure authentication.
