@@ -22,7 +22,7 @@ http://localhost/rest-api-app/apidocs/
 
 ![Scheme](assets/screenshot.png)
 
-## Send Requests
+## Sending Requests
 * You can send requests using **Try it out** button on /apidocs page or send POST requests to the URL below using environments like **Postman.**
 
 **Base URL:**
@@ -53,6 +53,13 @@ Authorization header with a valid apiKey must be sent for authenticated requests
 MessageBird client is set up with test key as default. It allows you to see the response without actually sending the message. If you would like to have the message to be delivered, please set the key on **src/model/Base.php** as below.
 
 `const CLIENT_API_KEY = '6zvxhpznYE2d1zeJ2O2JBRFGh';`
+
+## Running Tests
+Run the command below in the root directory.
+
+`./vendor/bin/phpunit tests --color`
+
+OK (8 tests, 21 assertions)
 
 ## Improvements
 * Slim framework can be used for more efficient structuring.
