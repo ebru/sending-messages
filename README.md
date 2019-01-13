@@ -25,7 +25,7 @@ http://localhost/rest-api-app/apidocs/
 ## Send Requests
 * You can send requests using **Try it out** button on /apidocs page or send POST requests to the URL below using environments like **Postman.**
 
-**Base URL**
+**Base URL:**
 http://localhost/rest-api-app
 
 **Reguest**
@@ -41,18 +41,21 @@ http://localhost/rest-api-app
 | Content-Type  | application/json
 | Authorization | apiKey
 
-Authorization header with a valid apiKey must be sent for authenticated requests.You can find sample data below.
+Authorization header with a valid apiKey must be sent for authenticated requests. You can find sample data below.
 
 **apiKey:** `rKNOfXdItLhfbGhcDFgYTDNFKitMDFZa`
 
 **Request Body**
 
 ```
-	{
-		"recipient" : "31612345678",
-		"originator": "MessageBird",
-		"message": "This is a test message."
-	}
+{
+    "recipient" : "31612345678",
+    "originator": "MessageBird",
+    "message": "This is a test message."
+}
 ```
 
+## Switching Between test/live Keys
+MessageBird client is set up with test key as default. It allows you to see the response without actually sending the message. If you would like to have the message to be delivered, please set the key on **src/model/Base.php** as below.
 
+`const CLIENT_API_KEY = '6zvxhpznYE2d1zeJ2O2JBRFGh';`
