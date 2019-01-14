@@ -1,6 +1,6 @@
 # REST API App w/ MessageBird
 
-This is a sample REST API application uses MessageBird API. It allows you to make POST requests to send sms messages to anyone in the world.
+This is a sample REST API application uses MessageBird API. It allows you to make POST requests to send sms messages to anyone in the world. https://ebrukye.github.io/rest-api-app/
 
 **Technologies used;**
 - MessageBird API client SDK for PHP
