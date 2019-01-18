@@ -24,9 +24,11 @@ final class MessageTest extends TestCase
                 'body' => 'This is a test message.',
                 'recipients' => [
                     'items' => [
-                        'recipient' => 31612345678,
-                        'status' => 'sent'
-                    ]
+                        [
+                            'recipient' => 31612345678,
+                            'status' => 'sent'
+                        ]
+                    ]    
                 ]
             ]
         ];
@@ -38,7 +40,7 @@ final class MessageTest extends TestCase
         $this->assertEquals($expected['details']['type'], $response['details']['type']);
         $this->assertEquals($expected['details']['originator'], $response['details']['originator']);
         $this->assertEquals($expected['details']['body'], $response['details']['body']);
-        $this->assertEquals($expected['details']['recipients'][0]['items']['recipient'], $response['details']['recipients'][0]['items']['recipient']);
-        $this->assertEquals($expected['details']['recipients'][0]['items']['status'], $response['details']['recipients'][0]['items']['status']);
+        $this->assertEquals($expected['details']['recipients']['items'][0]['recipient'], $response['details']['recipients']['items'][0]['recipient']);
+        $this->assertEquals($expected['details']['recipients']['items'][0]['status'], $response['details']['recipients']['items'][0]['status']);
     }
 }
