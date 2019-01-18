@@ -35,8 +35,8 @@ final class MessageTest extends TestCase
 
         $this->assertEquals($expected['status'], $response['status']);
         $this->assertEquals($expected['status_message'], $response['status_message']);
-        $this->assertEquals($expected['details']['type'], $expected['details']['type']);
-        $this->assertEquals($expected['details']['originator'], $expected['details']['originator']);
+        $this->assertEquals($expected['type'], $expected['type']);
+        $this->assertEquals($expected['originator'], $expected['originator']);
         $this->assertEquals($expected['details']['body'], $expected['details']['body']);
         $this->assertEquals($expected['details']['recipients']['items']['recipient'], $expected['details']['recipients']['items']['recipient']);
         $this->assertEquals($expected['details']['recipients']['items']['status'], $expected['details']['recipients']['items']['status']);
