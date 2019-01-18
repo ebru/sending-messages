@@ -11,7 +11,7 @@ class AuthController extends BaseController
     ];
 
     public function authenticate($headers): array {
-        if (!$headers['Authorization']) {
+        if (!array_key_exists('Authorization', $headers)) {
             return [
                 'status' => self::RESPONSE_STATUS_UNAUTHORIZED,
                 'status_message' =>'Authorization key is missing.'
