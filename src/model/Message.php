@@ -23,7 +23,7 @@ class Message extends Base
             $response = [
 				'status' => self::RESPONSE_STATUS_SUCCESS,
                 'status_message' =>'Message is sent.',
-                'details' => $messageResult
+                'details' => json_decode(json_encode($messageResult), true) // Convert object to array
             ];
 
         } catch (\MessageBird\Exceptions\AuthenticateException $e) {
