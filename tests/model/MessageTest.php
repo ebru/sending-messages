@@ -18,7 +18,6 @@ final class MessageTest extends TestCase
         $expected = [
             'status' => 200,
             'status_message' => 'Message is sent.',
-            'type' => 'sms',
             'originator' => 'MessageBird',
             'details' => [
                 'body' => 'This is a test message.',
@@ -35,7 +34,6 @@ final class MessageTest extends TestCase
 
         $this->assertEquals($expected['status'], $response['status']);
         $this->assertEquals($expected['status_message'], $response['status_message']);
-        $this->assertEquals($expected['details']['type'], $expected['details']['type']);
         $this->assertEquals($expected['details']['originator'], $expected['details']['originator']);
         $this->assertEquals($expected['details']['body'], $expected['details']['body']);
         $this->assertEquals($expected['details']['recipients']['items']['recipient'], $expected['details']['recipients']['items']['recipient']);

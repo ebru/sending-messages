@@ -59,7 +59,7 @@ Run the command below in the root directory.
 
 `./vendor/bin/phpunit tests --color`
 
-OK (10 tests, 25 assertions)
+OK (10 tests, 24 assertions)
 
 ## Improvements
 * Slim framework can be used for more efficient structuring.
