@@ -17,6 +17,6 @@ class Base
         $this->configs = include(__DIR__ . '/../../config/config.php');
 
         // Connect to MessageBird
-        $this->client = new \MessageBird\Client($this->configs['apiKey']);
+        $this->client = new \MessageBird\Client($this->configs['clientApiKey']);
     }
 }

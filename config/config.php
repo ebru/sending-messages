@@ -1,5 +1,5 @@
 <?php
 
 return array(
-    'apiKey' => 'lG7WMSfYQkXM9LImklLsK107L'
+    'clientApiKey' => 'lG7WMSfYQkXM9LImklLsK107L'
 );
