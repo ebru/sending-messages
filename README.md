@@ -52,9 +52,9 @@ Authorization header with a valid apiKey must be sent for authenticated requests
 ```
 
 ## Switching Between test/live Keys
-MessageBird client is set up with test key as default. It allows you to see the response without actually sending the message. If you would like to have the message to be delivered, please set the key on **src/model/Base.php** as a valid live key you have been provided.
+MessageBird client is set up with test key as default. It allows you to see the response without actually sending the message. If you would like to have the message to be delivered, please set the key on **config/config.php** as a valid live key you have been provided.
 
-`const CLIENT_API_KEY = 'validLiveKey';`
+`'clientApiKey' => 'validLiveKey';`
 
 ## Running Tests
 Run the command below in the root directory.
