@@ -6,7 +6,7 @@ namespace Model;
 class Base 
 {
     protected $client;
-    const CLIENT_API_KEY = 'lG7WMSfYQkXM9LImklLsK107L';
+    protected $configs;
 
     const RESPONSE_STATUS_SUCCESS = 200;
     const RESPONSE_STATUS_BAD_REQUEST = 400;
@@ -14,7 +14,9 @@ class Base
     const RESPONSE_STATUS_GENERAL = 500;
 
     public function __construct() {
+        $this->configs = include(__DIR__ . '/../../config/config.php');
+
         // Connect to MessageBird
-        $this->client = new \MessageBird\Client(self::CLIENT_API_KEY);
+        $this->client = new \MessageBird\Client($this->configs['apiKey']);
     }
 }
