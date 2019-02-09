@@ -14,7 +14,10 @@ class Message extends Base
 
     public function __construct($clientApiKey) {
         $this->clientApiKey = $clientApiKey;
-        $this->client = new \MessageBird\Client($this->clientApiKey);
+    }
+
+    public function createClient() {
+        return new \MessageBird\Client($this->clientApiKey);
     }
 
     // Send create request to MessageBird API
@@ -26,6 +29,8 @@ class Message extends Base
         $message->body       = $this->body;
 
         try {
+            $this->client = $this->createClient();
+
             $messageResult = $this->client->messages->create($message);
             
             $response = [
