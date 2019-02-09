@@ -7,10 +7,15 @@ use Model\Message;
 
 class CreateController extends BaseController
 {
+    private $clientApiKey;
+
+    public function __construct($clientApiKey) {
+        $this->clientApiKey = $clientApiKey;
+    }
     public function create($data): array
     {
         // Create new message
-        $message = new Message();
+        $message = new Message($this->clientApiKey);
 
         // Validate the request data
         $validationResponse = $this->validateRequest($data);

@@ -9,7 +9,9 @@ final class MessageTest extends TestCase
 {
     public function testMessageCreated(): void
     {
-        $message = new Message();
+        $clientApiKey = 'lG7WMSfYQkXM9LImklLsK107L';
+
+        $message = new Message($clientApiKey);
 
         $message->recipients  = '31612345678';
         $message->originator  = 'MessageBird';

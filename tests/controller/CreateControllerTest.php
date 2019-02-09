@@ -5,17 +5,21 @@ declare(strict_types = 1);
 use PHPUnit\Framework\TestCase;
 use Controller\CreateController;
 
+
+
 final class CreateControllerTest extends TestCase
 {
     public function testEmptyRecipientField(): void
     {
+        $clientApiKey = 'lG7WMSfYQkXM9LImklLsK107L';
+
         $data = [
             'recipient' => '',
             'originator' => 'MessageBird',
             'message' => 'This is a test message.'
         ];
           
-        $createController = new CreateController();
+        $createController = new CreateController($clientApiKey);
 
         $expected = [
             'status' => 400,
@@ -30,13 +34,15 @@ final class CreateControllerTest extends TestCase
 
     public function testEmptyOriginatorField(): void
     {
+        $clientApiKey = 'lG7WMSfYQkXM9LImklLsK107L';
+
         $data = [
             'recipient' => '31612345678',
             'originator' => '',
             'message' => 'This is a test message.'
         ];
           
-        $createController = new CreateController();
+        $createController = new CreateController($clientApiKey);
 
         $expected = [
             'status' => 400,
@@ -51,13 +57,15 @@ final class CreateControllerTest extends TestCase
 
     public function testEmptyMessageField(): void
     {
+        $clientApiKey = 'lG7WMSfYQkXM9LImklLsK107L';
+        
         $data = [
             'recipient' => '31612345678',
             'originator' => 'MessageBird',
             'message' => ''
         ];
           
-        $createController = new CreateController();
+        $createController = new CreateController($clientApiKey);
 
         $expected = [
             'status' => 400,
@@ -72,6 +80,8 @@ final class CreateControllerTest extends TestCase
 
     public function testMessageLongerThan160Characters(): void
     {
+        $clientApiKey = 'lG7WMSfYQkXM9LImklLsK107L';
+
         $data = [
             'recipient' => '31612345678',
             'originator' => 'MessageBird',
@@ -81,7 +91,7 @@ final class CreateControllerTest extends TestCase
                           vestibulum semper tortor.'
         ];
           
-        $createController = new CreateController();
+        $createController = new CreateController($clientApiKey);
 
         $expected = [
             'status' => 400,

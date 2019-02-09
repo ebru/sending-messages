@@ -1,5 +1,3 @@
 <?php
 
-return array(
-    'clientApiKey' => 'lG7WMSfYQkXM9LImklLsK107L'
-);
+define('CLIENT_API_KEY', 'lG7WMSfYQkXM9LImklLsK107L');

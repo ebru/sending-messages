@@ -6,6 +6,8 @@ use Controller\AuthController as Auth;
 use Controller\RateLimitController;
 use Controller\CreateController;
 
+include(__DIR__ . '/../config/config.php');
+
 // Rate limit control
 applyRateLimit();
 
@@ -24,7 +26,7 @@ function request() {
 			// Get body of the POST request
 			$data = json_decode(file_get_contents('php://input'), true);
 
-			$createController = new CreateController();
+			$createController = new CreateController(CLIENT_API_KEY);
 
 			printResponse($createController->create($data));
 			break;

@@ -9,6 +9,14 @@ class Message extends Base
     public $originator;
     public $body;
 
+    private $client;
+    private $clientApiKey;
+
+    public function __construct($clientApiKey) {
+        $this->clientApiKey = $clientApiKey;
+        $this->client = new \MessageBird\Client($this->clientApiKey);
+    }
+
     // Send create request to MessageBird API
     public function send(): array
     {
