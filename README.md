@@ -62,8 +62,3 @@ Run the command below in the root directory.
 `./vendor/bin/phpunit tests --color`
 
 OK (10 tests, 25 assertions)
-
-## Improvements
-* Slim framework can be used for more efficient structuring.
-* API rate limit can be improved while storing requests using in-memory storage like Redis.
-* JWT would be applied for more secure authentication.
