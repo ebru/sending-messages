@@ -1,8 +1,8 @@
 # REST API App w/ MessageBird
 
-This is a sample REST API application uses MessageBird API. It allows you to make POST requests to send text messages to anyone in the world. https://ebrukye.github.io/rest-api-app/
+This is a sample REST API application uses MessageBird API. It allows you to make POST requests to send text messages to anyone in the world. https://ebrukye.github.io/sending-messages/
 
-[![Build Status](https://travis-ci.org/ebrukye/rest-api-app.svg?branch=master)](https://travis-ci.org/ebrukye/rest-api-app)
+[![Build Status](https://travis-ci.org/ebrukye/sending-messages.svg?branch=master)](https://travis-ci.org/ebrukye/sending-messages)
 
 **Technologies used;**
 - MessageBird API client SDK for PHP
@@ -13,14 +13,14 @@ This is a sample REST API application uses MessageBird API. It allows you to mak
 ## Installation
 * Clone the repository to the directory that can be reached on your localhost.
 
-`git clone https://github.com/ebrukye/rest-api-app.git`
+`git clone https://github.com/ebrukye/sending-messages.git`
 
 * Install necessary packages to your workspace via Composer running command below.
 
 `composer install`
 
 * You can see **/apidocs** page to see the documentation and send requests.
-http://localhost/rest-api-app/apidocs/
+http://localhost/sending-messages/apidocs/
 
 ![Scheme](assets/screenshot.png)
 
@@ -28,7 +28,7 @@ http://localhost/rest-api-app/apidocs/
 You can send requests using **Try it out** button on /apidocs page or send POST requests to the URL below using environments like **Postman.**
 
 **Base URL:**
-http://localhost/rest-api-app
+http://localhost/sending-messages
 
 **Reguest**
 
