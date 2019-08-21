@@ -1,8 +1,8 @@
 # REST API App w/ MessageBird
 
-This is a sample REST API application uses MessageBird API. It allows you to make POST requests to send text messages to anyone in the world. https://ebrukye.github.io/sending-messages/
+This is a sample REST API application uses MessageBird API. It allows you to make POST requests to send text messages to anyone in the world.
 
-[![Build Status](https://travis-ci.org/ebrukye/sending-messages.svg?branch=master)](https://travis-ci.org/ebrukye/sending-messages)
+[![Build Status](https://travis-ci.org/ebru/sending-messages.svg?branch=master)](https://travis-ci.org/ebru/sending-messages)
 
 **Technologies used;**
 - MessageBird API client SDK for PHP
@@ -13,7 +13,7 @@ This is a sample REST API application uses MessageBird API. It allows you to mak
 ## Installation
 * Clone the repository to the directory that can be reached on your localhost.
 
-`git clone https://github.com/ebrukye/sending-messages.git`
+`git clone https://github.com/ebru/sending-messages.git`
 
 * Install necessary packages to your workspace via Composer running command below.
 
